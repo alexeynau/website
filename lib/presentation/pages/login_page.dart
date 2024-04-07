@@ -4,7 +4,7 @@ import '../bloc/login_bloc/login_bloc.dart';
 
 // Define the login page
 class LoginPage extends StatelessWidget {
-  
+
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login Page'),
+        title: const Text('Login Page'),
       ),
       body: BlocListener<LoginBloc, LoginState>(
         listener: (context, state) {
@@ -33,25 +33,25 @@ class LoginPage extends StatelessWidget {
         child: BlocBuilder<LoginBloc, LoginState>(
           builder: (context, state) {
             return Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextField(
                     controller: usernameController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Username',
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   TextField(
                     controller: passwordController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Password',
                     ),
                     obscureText: true,
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   ElevatedButton(
                     onPressed: () {
                       loginBloc.add(
@@ -61,11 +61,11 @@ class LoginPage extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text('Login'),
+                    child: const Text('Login'),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   if (state is LoginLoading)
-                    CircularProgressIndicator(),
+                    const CircularProgressIndicator(),
                 ],
               ),
             );
