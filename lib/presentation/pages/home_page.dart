@@ -61,7 +61,7 @@ class HomePage extends StatelessWidget {
                       shrinkWrap: true,
                       mainAxisSpacing: 16.0,
                       crossAxisSpacing: 16.0,
-                      children: [
+                      children: const [
                         MockContainerItem(),
                         MockContainerItem(),
                         MockContainerItem(),
@@ -101,7 +101,7 @@ class MockContainerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 195, 164, 230),
+        color: const Color.fromARGB(255, 195, 164, 230),
         borderRadius: BorderRadius.circular(8.0),
        
         boxShadow: List.generate(

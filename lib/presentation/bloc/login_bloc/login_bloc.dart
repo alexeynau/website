@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
 part 'login_event.dart';
@@ -14,7 +14,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         // You can use services or APIs to authenticate the user
 
         // Simulating a delay for demonstration purposes
-        await Future.delayed(Duration(seconds: 2));
+        await Future.delayed(const Duration(seconds: 2));
 
         // If login is successful, yield LoginSuccess
         emit(LoginSuccess());
