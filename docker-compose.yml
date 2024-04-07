@@ -1,0 +1,6 @@
+version: '3'
+services:
+  my_website:
+    image: website
+    ports:
+      - 8080:8080
