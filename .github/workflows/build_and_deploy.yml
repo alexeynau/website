@@ -18,7 +18,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.19.0
+          flutter-version: 3.19.5
       - run: flutter --version
       
       # Consider passing '--fatal-infos' for slightly stricter analysis.
@@ -54,6 +54,7 @@ jobs:
             GIT_AUTH_TOKEN=${{ secrets.GH_REGISTRY_TOKEN }}
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: deploy with ssh
